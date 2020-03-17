@@ -1,11 +1,11 @@
 import React from 'react';
 
-const List = (props) => (
+const List = ({ name, todos }) => (
   <div>
-    <h1>{props.name}</h1>
+    <h1>{name}</h1>
     <ul>
       { 
-        props.todos.map( todo => <li key={todo.id}>{todo.title}</li> )
+        todos.map( todo => <li key={todo.id}>{todo.title}</li> )
       }
     </ul>
   </div>
