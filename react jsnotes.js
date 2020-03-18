@@ -145,6 +145,7 @@ app
    props - properties passed down from parent to child 
  State change
    state - storage { key: values }
+render()
 
 
 

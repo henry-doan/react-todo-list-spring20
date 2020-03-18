@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import List from './components/todos/List';
 import TodoForm from './components/todos/TodoForm';
 import Footer from './components/todos/Footer';
+import Clock from './components/todos/Clock';
 
 class App extends Component {
   state = { todos: [
@@ -10,7 +11,13 @@ class App extends Component {
     { id: 3, title: 'Learn Hooks', complete: false },
     // { id: 14, title: 'buy milk', complete: false }
     ],
-    filter: 'All'
+    filter: 'All',
+    showClock: false
+  }
+
+  toggleShowClock = () => {
+    // change opp value to what show clock is
+    this.setState({ showClock: !this.state.showClock })
   }
 
   setFilter = (incomingFilter) => {
@@ -58,11 +65,15 @@ class App extends Component {
   }
 
   render() {
-    const { todos, filter } = this.state
+    const { todos, filter, showClock } = this.state
     return(
       <div>
         {/* { this.renderTodos() } */}
         <TodoForm addTodo={this.addTodo} />
+
+        { showClock && <Clock /> }
+        <button onClick={this.toggleShowClock}>Toggle Clock</button>
+
         <List name='Coding todo list' todos={this.visibleTodos()} />
         <Footer filter={filter} setFilter={this.setFilter} />
         {/* <List name='Coding todo list' todos /> */}
