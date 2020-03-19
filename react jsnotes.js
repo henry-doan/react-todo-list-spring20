@@ -200,10 +200,12 @@ render()
    
                           Index
                             |
-                           App
+                add      App delete
+
                            /  \
-                    ContactForm   Contacts
+    add         ContactForm   ContactsList delete
                                  |
-                                Contact
+                                Contact delete
 
   */
+
